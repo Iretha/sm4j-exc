@@ -20,7 +20,7 @@ public class MainTest {
 	public void testLocalizedMessage() {
 		Locale.setDefault(new Locale("fake")); // only for testing purposes
 
-		ExampleException e = new ExampleException(ExampleBundleKey.testKey);
+		ExampleException e = new ExampleException(ExampleBundle1Key.testKey);
 
 		Assert.assertEquals("Test message default", e.getMessage());
 		for (String test : TEST_LOCALES) {
@@ -36,7 +36,7 @@ public class MainTest {
 	public void testMessageWithParams() {
 		Locale.setDefault(new Locale("fake")); // only for testing purposes
 
-		ExampleException e = new ExampleException(ExampleBundleKey.testKeyParams, "string", 2);
+		ExampleException e = new ExampleException(ExampleBundle1Key.testKeyParams, "string", 2);
 
 		Assert.assertEquals("Par 1: string, Par2: 2 default", e.getMessage());
 		for (String test : TEST_LOCALES) {
@@ -52,7 +52,7 @@ public class MainTest {
 	public void testSupportedLocale() {
 		Locale.setDefault(new Locale(TEST_LOCALES.get(0))); // for testing purposes
 
-		ExampleException e = new ExampleException(ExampleBundleKey.testKey);
+		ExampleException e = new ExampleException(ExampleBundle1Key.testKey);
 
 		Assert.assertEquals(MSG + TEST_LOCALES.get(0), e.getMessage());
 	}
@@ -64,8 +64,19 @@ public class MainTest {
 	public void testUnsupportedLocale() {
 		Locale.setDefault(new Locale("fake")); // only for testing purposes
 
-		ExampleException e = new ExampleException(ExampleBundleKey.testKey);
+		ExampleException e = new ExampleException(ExampleBundle1Key.testKey);
 		Assert.assertEquals("Test message default", e.getMessage());
+	}
+	
+	/**
+	 * Message from the default ExampleBundle.properties file is expected
+	 */
+	@Test
+	public void testBundleOutOfThePackage() {
+		Locale.setDefault(new Locale("fake")); // only for testing purposes
+
+		ExampleException e = new ExampleException(ExampleBundle2Key.testKey);
+		Assert.assertEquals("Bundle out of the package", e.getMessage());
 	}
 
 }

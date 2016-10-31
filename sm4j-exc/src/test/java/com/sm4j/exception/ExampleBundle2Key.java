@@ -1,12 +1,12 @@
 package com.sm4j.exception;
 
-public enum ExampleBundleKey implements IMessageKey {
+public enum ExampleBundle2Key implements IMessageKey {
 	testKey,
 	testKeyParams;
 
 	@Override
 	public String getBundleName() {
-		return "ExampleBundle";
+		return "ExampleBundle2";
 	}
 
 	@Override
