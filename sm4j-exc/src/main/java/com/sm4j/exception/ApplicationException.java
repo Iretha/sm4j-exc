@@ -6,7 +6,7 @@ import com.sm4j.exception.util.MessageFormatter;
 
 /**
  * General Application Exception
- * 
+ *
  * @author Ireth
  */
 public abstract class ApplicationException extends Exception {
@@ -68,7 +68,7 @@ public abstract class ApplicationException extends Exception {
 
 	/**
 	 * Message for specific locale
-	 * 
+	 *
 	 * @param locale
 	 * @return message
 	 */
