@@ -44,14 +44,14 @@ If you need locale specific message, use the provided method and get it.
 1. Create a resource bundle 
 > Place your files under the ***resources*** directory of the java project. You can put  them directly or under a hierarchy of directories.
 
-1. Add supported locales i.e.
+2. Add supported locales i.e.
 	- ExampleBundle.properties  
 	>Do not forget the default locale! It serves well when an unsupported locale is requested.
 	
 	- ExampleBundle_en_UK.properties
 	- ExampleBundle_xx_XX.properties
 	
-1. Add an enumeration file for the bundle which will keep the message keys
+3. Add an enumeration file for the bundle which will keep the message keys
 	- Enum should implement **com.sm4j.exception.IMessageKey**
 	- Implement required methods as follows:
 ```Java
@@ -70,7 +70,7 @@ If you need locale specific message, use the provided method and get it.
 	}
 ```
 
-1. Your custom exceptions should extend **com.sm4j.exception.ApplicationException**
+4. Your custom exceptions should extend **com.sm4j.exception.ApplicationException**
 
 - - -
 
@@ -83,13 +83,13 @@ testKey=Test message default
 testKeyParams=Par 1: {0}, Par2: {1} default
 ```
 
-1. Add the keys to the enumeration
+2. Add the keys to the enumeration
 
 ```java
 testKey, testKeyParams;
 ```
 
-1. Throw an exception with the key - choose the constructor that best suits your needs.
+3. Throw an exception with the key - choose the constructor that best suits your needs.
 
 > Here are only two examples:
 >- *Without params:*
@@ -101,14 +101,14 @@ throw new ExampleException(ExampleEnum.testKey);
 throw new ExampleException(ExampleEnum.testKeyParams, "string", 2);
 ```
 
-1. Exception Message
+4. Exception Message
 
 >Exception message will correspond to the application locale.
 >```java
 String msg = e.getMessage();
 ```
 
-1. Localized Exception Message
+5. Localized Exception Message
 
 >If you want to get the localized message in order to show it to an user with a session specific locale, you need to catch the exception (which is the best practice btw.) and simply call:
 
