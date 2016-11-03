@@ -13,6 +13,17 @@ public class MainTest {
 	private static final List<String> TEST_LOCALES = Arrays.asList("en_UK", "en_US", "bg_BG");
 
 	/**
+	 * Message from the default ExampleBundle.properties file is expected
+	 */
+	@Test
+	public void testBundleOutOfThePackage() {
+		Locale.setDefault(new Locale("fake")); // only for testing purposes
+
+		ExampleException e = new ExampleException(ExampleBundle2Key.testKey);
+		Assert.assertEquals("Bundle out of the package", e.getMessage());
+	}
+
+	/**
 	 * Message from the corresponding ExampleBundle_x_X.properties file is
 	 * expected
 	 */
@@ -40,7 +51,8 @@ public class MainTest {
 
 		Assert.assertEquals("Par 1: string, Par2: 2 default", e.getMessage());
 		for (String test : TEST_LOCALES) {
-			Assert.assertEquals("Par 1: string, Par2: 2 " + test, e.getLocalizedMessage(new Locale(test)));
+			Assert.assertEquals("Par 1: string, Par2: 2 " + test,
+					e.getLocalizedMessage(new Locale(test)));
 		}
 	}
 
@@ -66,17 +78,6 @@ public class MainTest {
 
 		ExampleException e = new ExampleException(ExampleBundle1Key.testKey);
 		Assert.assertEquals("Test message default", e.getMessage());
-	}
-	
-	/**
-	 * Message from the default ExampleBundle.properties file is expected
-	 */
-	@Test
-	public void testBundleOutOfThePackage() {
-		Locale.setDefault(new Locale("fake")); // only for testing purposes
-
-		ExampleException e = new ExampleException(ExampleBundle2Key.testKey);
-		Assert.assertEquals("Bundle out of the package", e.getMessage());
 	}
 
 }

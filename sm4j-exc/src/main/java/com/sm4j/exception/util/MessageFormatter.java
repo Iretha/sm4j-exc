@@ -15,7 +15,7 @@ public final class MessageFormatter {
 	/**
 	 * Returns formated message from the given resource file by its key. Uses
 	 * the dafault locale.
-	 * 
+	 *
 	 * @param key
 	 *            - message key
 	 * @param params
@@ -28,7 +28,7 @@ public final class MessageFormatter {
 
 	/**
 	 * Returns formated message from the given resource file by its key.
-	 * 
+	 *
 	 * @param locale
 	 *            - specific locale
 	 * @param key

@@ -1,8 +1,7 @@
 package com.sm4j.exception;
 
 public enum ExampleBundle1Key implements IMessageKey {
-	testKey,
-	testKeyParams;
+	testKey, testKeyParams;
 
 	@Override
 	public String getBundleName() {
