@@ -50,8 +50,10 @@ If you need locale specific message, use the provided method and get it.
 	
 	- ExampleBundle_en_UK.properties
 	- ExampleBundle_xx_XX.properties
-	
-3. Add an enumeration file for the bundle which will keep the message keys
+
+3. Your custom exceptions should extend **com.sm4j.exception.ApplicationException**
+
+4. Add an enumeration file for the bundle which will keep the message keys
 	- Enum should implement **com.sm4j.exception.IMessageKey**
 	- Implement required methods as follows:
 ```Java
@@ -69,8 +71,6 @@ If you need locale specific message, use the provided method and get it.
 		return name();
 	}
 ```
-
-4. Your custom exceptions should extend **com.sm4j.exception.ApplicationException**
 
 - - -
 
