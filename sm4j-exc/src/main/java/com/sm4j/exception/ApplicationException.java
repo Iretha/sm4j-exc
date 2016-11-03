@@ -78,4 +78,14 @@ public abstract class ApplicationException extends Exception {
 		}
 		return MessageFormatter.format(locale, this.key, this.params);
 	}
+
+	/**
+	 * Message for specific locale
+	 *
+	 * @param locale
+	 * @return message
+	 */
+	public String getLocalizedMessage(String locale) {
+		return getLocalizedMessage(new Locale(locale));
+	}
 }
