@@ -122,5 +122,5 @@ String localizedMsg = e.getLocalizedMessage(new Locale("en_UK"))
 
 - - -
 
-**Full example**
+**Full example** <br>
 You can find a full example under the [test directory](https://github.com/Iretha/sm4j-exc/tree/master/sm4j-exc/src/test) of the project.
