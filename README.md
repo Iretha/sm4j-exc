@@ -91,7 +91,7 @@ testKey, testKeyParams;
 
 3. Throw an exception with the key - choose the constructor that best suits your needs.
 
-> Here are only two examples:
+> Here are some examples:
 >- *Without params:*
 ```java
 throw new ExampleException(ExampleEnum.testKey);
